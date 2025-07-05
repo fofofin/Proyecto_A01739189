@@ -57,7 +57,7 @@ void Unidad::recibeAtaque(int ptosAtaque) {
         golpe = min + rand() % ((max - min)+1);
     }
     objetivo.recibeAtaque(golpe);
-    cout << "Golpesate al enemigo con" << golpe << "puntos de daño" << endl;
+    cout << "Golpesate al enemigo con " << golpe << " puntos de daño" << endl;
  }
  
  void Unidad::imprimir() const {
@@ -66,5 +66,5 @@ void Unidad::recibeAtaque(int ptosAtaque) {
     cout << "Vida actual " << salud << endl;
     cout << "Ataque máximo " << ataque << endl;
     cout << "Barra de vida ";
-    imprimirVida();    
+    imprimirVida();
 }
