@@ -45,23 +45,28 @@ void Unidad::recibeAtaque(int ptosAtaque) {
     salud -= ptosAtaque;
     if (salud < 0) salud = 0;
 }
- void Unidad::atacar(Unidad& objetivo) {
-    srand(time(0));
-    int golpe;
+#include <iostream>
+#include <random>
+
+void Unidad::atacar(Unidad& objetivo) {
+    static random_device rd;  
+    static mt19937 gen(rd()); 
+
+    int golpe = 0;
     if (objetivo.getNivel() <= nivel) {
         int min = ataque / 2;
         int max = ataque;
-        golpe = min + rand() % ((max - min)+1);
-        
+        uniform_int_distribution<> distrib(min, max);
+        golpe = distrib(gen);
     } else {
         int max = ataque / 2;
-        golpe = 1 + rand() % max;
-        
+        uniform_int_distribution<> distrib(1, max);
+        golpe = distrib(gen);
     }
     objetivo.recibeAtaque(golpe);
-    cout << "Golpesate al enemigo con" << golpe << "puntos de daño" << endl;
- }
- 
+    cout << "Golpeaste al enemigo con " << golpe << " puntos de daño" << endl;
+}
+
  void Unidad::imprimir() const {
     cout << "Nivel " << nivel << endl;
     cout << "Vida máxima " << vida << endl;
