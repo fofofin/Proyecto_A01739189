@@ -48,7 +48,7 @@ void Unidad::recibeAtaque(int ptosAtaque) {
  void Unidad::atacar(Unidad& objetivo) {
     srand(time(0));
     int golpe;
-    if (objetivo.getNivel() > nivel) {
+    if ( nivel > objetivo.getNivel()) {
         int max = ataque / 2;
         golpe = 1 + rand() % (max);
     } else {
