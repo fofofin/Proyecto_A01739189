@@ -48,13 +48,15 @@ void Unidad::recibeAtaque(int ptosAtaque) {
  void Unidad::atacar(Unidad& objetivo) {
     srand(time(0));
     int golpe;
-    if (objetivo.getNivel() > nivel) {
-        int max = ataque / 2;
-        golpe = 1 + rand() % max;
-    } else {
+    if (objetivo.getNivel() <= nivel) {
         int min = ataque / 2;
         int max = ataque;
         golpe = min + rand() % ((max - min)+1);
+        
+    } else {
+        int max = ataque / 2;
+        golpe = 1 + rand() % max;
+        
     }
     objetivo.recibeAtaque(golpe);
     cout << "Golpesate al enemigo con" << golpe << "puntos de daño" << endl;
