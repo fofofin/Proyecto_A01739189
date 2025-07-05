@@ -22,7 +22,7 @@ class Unidad {
         void setVida(int v);
         void setSalud(int s);
         void setAtaque(int a);
-        void setNivel(int a);
+        void setNivel(int n);
 
         int porcentajeSalud() const;
         void imprimirVida() const;
