@@ -58,10 +58,10 @@ void Unidad::recibeAtaque(int ptosAtaque) {
  }
  
  void Unidad::imprimir() const {
-    cout << "Nivel" << nivel << endl;
-    cout << "Vida máxima" << vida << endl;
-    cout << "Vida actual" << salud << endl;
-    cout << "Ataque máximo" << ataque << endl;
-    cout << "Barra de vida";
+    cout << "Nivel " << nivel << endl;
+    cout << "Vida máxima " << vida << endl;
+    cout << "Vida actual " << salud << endl;
+    cout << "Ataque máximo " << ataque << endl;
+    cout << "Barra de vida ";
     imprimirVida();    
 }
