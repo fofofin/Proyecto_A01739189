@@ -1,9 +1,28 @@
-# Ejercicio - Hello World
+classDiagram
+    class Unidad {
+        - int vida
+        - int salud
+        - int ataque
+        - int nivel
 
-Este proyecto tiene la estructura básica para cualquier proyecto C++. 
+        + Unidad()
+        + Unidad(int vida, int ataque, int nivel)
 
-La carpeta contiene el código fuente y el archivo de construcción ```make```.
+        + int getVida()
+        + void setVida(int v)
+        
+        + int getSalud()
+        + void setSalud(int s)
 
-La carpeta `build` contiene el codigo binario generado por el archivo de construcción ```make```.
+        + int getAtaque()
+        + void setAtaque(int a)
 
-Consulta el archivo assignments/README.md para instrucciones sobre la compilación y ejecución del proyecto.
+        + int getNivel()
+        + void setNivel(int n)
+
+        + int porcentajeSalud()
+        + void imprimeBarra()
+        + void recibeAtaque(int ptosAtaque)
+        + void atacar(Unidad& objetivo)
+        + void imprimir()
+    }
