@@ -26,9 +26,9 @@ class Unidad {
 
         int porcentajeSalud() const;
         void imprimirVida() const;
-        void recibeAtaque(int ptosAtaque);
-        void atacar(Unidad& objetivo);
-        void imprimir() const;
+        virtual void recibeAtaque(int ptosAtaque);
+        virtual void atacar(Unidad& objetivo);
+        virtual void imprimir() const;
     
 };
 
