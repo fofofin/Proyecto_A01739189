@@ -1,3 +1,4 @@
+```mermaid
 classDiagram
     class Unidad {
         - int vida
@@ -59,3 +60,4 @@ classDiagram
     Guerrero --|> Unidad
     Arquero --|> Unidad
     Mago --|> Unidad
+```
