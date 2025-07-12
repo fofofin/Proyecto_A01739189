@@ -1,7 +1,7 @@
 #pragma once
 #include "Unidad.hpp"
 
-class Arquero : Unidad {
+class Arquero : public Unidad {
     public:
         Arquero();
         Arquero(int vida, int ataqur, int nivel, float);
