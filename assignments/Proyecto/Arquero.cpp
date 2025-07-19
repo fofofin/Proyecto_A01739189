@@ -28,6 +28,9 @@ float Arquero::CalculaCritico() {
 
 void Arquero::recibeAtaque(int ptosAtaque) {
     Unidad::recibeAtaque(ptosAtaque);
+    if (!estaVivo()) {
+        cout << "¡El Arquero ha muerto!" << endl;
+    }
 }
 
 void Arquero::atacar(Unidad& objetivo) {
@@ -52,7 +55,12 @@ void Arquero::atacar(Unidad& objetivo) {
          << multiplicador << " = " << golpeFinal << " de daño!" << endl;
 }
 
+bool Arquero::estaVivo() {
+    return getSalud() > 0 || critico > 1.0f;
+}
+
 void Arquero::imprimir() const {
     cout << "Arquero - Vida: " << getVida() << ", Ataque: " << getAtaque() 
          << ", Nivel: " << getNivel() << ", Critico: " << critico << endl;
+    imprimirVida();
 }

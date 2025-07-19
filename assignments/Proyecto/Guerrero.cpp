@@ -55,6 +55,14 @@ void Guerrero::recibeAtaque(int ptosAtaque){
 
     cout << "¡Guerrero recibió " << ptosAtaque << " pero usó su escudo y redujo " << reduccion 
          << "! Daño real: " << dañoReal << endl;
+    
+    if (!estaVivo()) {
+        cout << "¡El Guerrero ha muerto!" << endl;
+    }
+}
+
+bool Guerrero::estaVivo() {
+    return getSalud() > 0 || fuerza > 0;
 }
 
 void Guerrero::imprimir() const {

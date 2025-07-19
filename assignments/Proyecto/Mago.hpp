@@ -11,7 +11,8 @@ class Mago : public Unidad {
 
         void recibeAtaque(int ptosAtaque);
         void atacar(Unidad& objetivo);
-        void imprimir();
+        void imprimir() const override;
+        bool estaVivo() override;
     
     private:
         int mana;

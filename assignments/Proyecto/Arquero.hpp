@@ -13,7 +13,8 @@ class Arquero : public Unidad {
 
         void recibeAtaque(int ptosAtaque);
         void atacar(Unidad& objetivo);
-        void imprimir() const;
+        void imprimir() const override;
+        bool estaVivo() override;
 
     private:
         float critico;

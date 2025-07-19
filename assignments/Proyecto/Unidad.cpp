@@ -45,7 +45,7 @@ void Unidad::recibeAtaque(int ptosAtaque) {
     salud -= ptosAtaque;
     if (salud < 0) salud = 0;
 }
- void Unidad::atacar(Unidad& objetivo) {
+void Unidad::atacar(Unidad& objetivo) {
     srand(time(0));
     int golpe;
     if ( nivel > objetivo.getNivel()) {
@@ -58,13 +58,19 @@ void Unidad::recibeAtaque(int ptosAtaque) {
     }
     objetivo.recibeAtaque(golpe);
     cout << "Golpesate al enemigo con  " << golpe << "  puntos de daño" << endl;
- }
+}
  
- void Unidad::imprimir() const {
+void Unidad::imprimir() const {
     cout << "Nivel " << nivel << endl;
     cout << "Vida máxima " << vida << endl;
     cout << "Vida actual " << salud << endl;
     cout << "Ataque máximo " << ataque << endl;
     cout << "Barra de vida ";
     imprimirVida();
+
+
+}
+std::ostream& operator<<(std::ostream& os, const Unidad& unidad) {
+    unidad.imprimir();
+    return os;
 }

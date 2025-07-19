@@ -27,6 +27,9 @@ void Mago::recibeAtaque(int ptosAtaque) {
         Unidad::recibeAtaque(ptosAtaque);
         cout << "¡Mago recibió "<< ptosAtaque << endl;
     }
+    if (!estaVivo()) {
+        cout << "¡El Mago ha muerto!" << endl;
+    }
 }
 
 void Mago::atacar(Unidad& objetivo) {
@@ -65,7 +68,18 @@ void Mago::atacar(Unidad& objetivo) {
     cout << "¡Hechicero ataca con " << golpeBase << " puntos de daño! (Maná restante: " << mana << ")" << endl;
 }
 
-void Mago::imprimir() {
+bool Mago::estaVivo() {
+    if (getSalud() > 0) return true;
+    else if (mana > 0) {
+        int nuevaSalud = 10;
+        setSalud(nuevaSalud);
+        cout << "¡El Mago revive con 10 puntos de salud!" << endl;
+        return true;
+    }
+    return false;
+}
+
+void Mago::imprimir() const {
     cout << "Mago - Vida: " << getSalud() << ", Ataque: " << getAtaque() 
          << ", Nivel: " << getNivel() << ", Mana: " << mana << endl;
     imprimirVida();

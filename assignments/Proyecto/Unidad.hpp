@@ -1,7 +1,8 @@
 #ifndef UNIDAD_HPP
 #define UNIDAD_HPP
-
+#include <iostream>
 #include <string>
+using namespace std;
 
 class Unidad {
     private:
@@ -29,6 +30,8 @@ class Unidad {
         virtual void recibeAtaque(int ptosAtaque);
         virtual void atacar(Unidad& objetivo);
         virtual void imprimir() const;
+        virtual bool estaVivo() = 0;
+        friend ostream& operator<<(ostream& os, const Unidad& unidad);
     
 };
 
