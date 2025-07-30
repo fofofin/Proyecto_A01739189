@@ -55,8 +55,8 @@ void Arquero::atacar(Unidad& objetivo) {
          << multiplicador << " = " << golpeFinal << " de daño!" << endl;
 }
 
-bool Arquero::estaVivo() {
-    return getSalud() > 0 || critico > 1.0f;
+bool Arquero::estaVivo() const {
+    return getSalud() > 0;
 }
 
 void Arquero::imprimir() const {

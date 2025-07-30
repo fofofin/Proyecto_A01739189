@@ -68,15 +68,20 @@ void Mago::atacar(Unidad& objetivo) {
     cout << "¡Hechicero ataca con " << golpeBase << " puntos de daño! (Maná restante: " << mana << ")" << endl;
 }
 
-bool Mago::estaVivo() {
-    if (getSalud() > 0) return true;
-    else if (mana > 0) {
-        int nuevaSalud = 10;
-        setSalud(nuevaSalud);
+bool Mago::estaVivo() const{
+    return getSalud() > 0;
+}
+
+bool Mago::puedeRevivir() const {
+    return getSalud() <= 0 && mana > 0;
+}
+
+void Mago::revivir() {
+    if (mana > 0) {
+        setSalud(10);  // o el valor que desees
+        mana -= 10;    // o lo que cueste revivir
         cout << "¡El Mago revive con 10 puntos de salud!" << endl;
-        return true;
     }
-    return false;
 }
 
 void Mago::imprimir() const {

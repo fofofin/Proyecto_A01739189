@@ -61,8 +61,8 @@ void Guerrero::recibeAtaque(int ptosAtaque){
     }
 }
 
-bool Guerrero::estaVivo() {
-    return getSalud() > 0 || fuerza > 0;
+bool Guerrero::estaVivo() const {
+    return getSalud() > 0;
 }
 
 void Guerrero::imprimir() const {

@@ -13,7 +13,7 @@ class Guerrero : public Unidad {
         void recibeAtaque(int ptosAtaque);
         void atacar(Unidad& objetivo);
         void imprimir() const override;
-        bool estaVivo() override;
+        bool estaVivo() const override;
     
     private:
         int fuerza;

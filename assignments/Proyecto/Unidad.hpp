@@ -2,6 +2,7 @@
 #define UNIDAD_HPP
 #include <iostream>
 #include <string>
+#include "ArgumentoInvalido.hpp"
 using namespace std;
 
 class Unidad {
@@ -30,8 +31,11 @@ class Unidad {
         virtual void recibeAtaque(int ptosAtaque);
         virtual void atacar(Unidad& objetivo);
         virtual void imprimir() const;
-        virtual bool estaVivo() = 0;
+        virtual bool estaVivo() const = 0;
+        virtual bool puedeRevivir() const { return false; };
+        virtual void revivir();
         friend ostream& operator<<(ostream& os, const Unidad& unidad);
+        virtual ~Unidad() {}
     
 };
 

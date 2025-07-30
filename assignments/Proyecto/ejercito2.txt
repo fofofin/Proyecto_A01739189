@@ -1,0 +1,5 @@
+Mago 95 28 6 4
+Guerrero 105 21 5 11
+Arquero 82 26 7 1.3
+Guerrero 100 20 4 8
+Mago 88 29 5 6

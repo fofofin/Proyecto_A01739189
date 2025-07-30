@@ -12,7 +12,9 @@ class Mago : public Unidad {
         void recibeAtaque(int ptosAtaque);
         void atacar(Unidad& objetivo);
         void imprimir() const override;
-        bool estaVivo() override;
+        bool estaVivo() const override;
+        bool puedeRevivir() const override;
+        virtual void revivir();
     
     private:
         int mana;
