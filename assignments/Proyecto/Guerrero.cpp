@@ -65,9 +65,7 @@ bool Guerrero::estaVivo() const {
     return getSalud() > 0;
 }
 
-void Guerrero::imprimir() const {
-    cout << "Guerrero - Vida: " << getVida() << ", Salud: " << getSalud() 
-         << ", Ataque: " << getAtaque() << ", Nivel: " << getNivel() 
-         << ", Fuerza: " << getFuerza() << endl;
-    imprimirVida();
+void Guerrero::imprimir(std::ostream& os) const {
+    os << "Guerrero - Vida: " << vida << ", Salud: " << salud
+       << ", Ataque: " << ataque << ", Nivel: " << nivel << ", Fuerza: " << fuerza;
 }

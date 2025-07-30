@@ -13,7 +13,7 @@ class Arquero : public Unidad {
 
         void recibeAtaque(int ptosAtaque);
         void atacar(Unidad& objetivo);
-        void imprimir() const override;
+        void imprimir(std::ostream& os) const override;
         bool estaVivo() const override;
 
     private:

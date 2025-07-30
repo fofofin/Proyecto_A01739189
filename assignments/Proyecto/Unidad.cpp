@@ -88,19 +88,10 @@ void Unidad::revivir() {
     // Implementación vacía
 }
 
-
- 
-void Unidad::imprimir() const {
-    cout << "Nivel " << nivel << endl;
-    cout << "Vida máxima " << vida << endl;
-    cout << "Vida actual " << salud << endl;
-    cout << "Ataque máximo " << ataque << endl;
-    cout << "Barra de vida ";
-    imprimirVida();
-
-
-}
-std::ostream& operator<<(std::ostream& os, const Unidad& unidad) {
-    unidad.imprimir();
+ostream& operator<<(ostream& os, const Unidad& unidad) {
+    unidad.imprimir(os);
     return os;
 }
+
+ 
+

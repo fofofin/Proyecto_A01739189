@@ -59,8 +59,7 @@ bool Arquero::estaVivo() const {
     return getSalud() > 0;
 }
 
-void Arquero::imprimir() const {
-    cout << "Arquero - Vida: " << getVida() << ", Ataque: " << getAtaque() 
-         << ", Nivel: " << getNivel() << ", Critico: " << critico << endl;
-    imprimirVida();
+void Arquero::imprimir(std::ostream& os) const {
+    os << "Arquero - Vida: " << vida << ", Ataque: " << ataque
+       << ", Nivel: " << nivel << ", Critico: " << critico;
 }

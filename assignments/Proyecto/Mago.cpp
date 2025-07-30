@@ -78,14 +78,13 @@ bool Mago::puedeRevivir() const {
 
 void Mago::revivir() {
     if (mana > 0) {
-        setSalud(10);  // o el valor que desees
-        mana -= 10;    // o lo que cueste revivir
+        setSalud(10); 
+        mana -= 10;    
         cout << "¡El Mago revive con 10 puntos de salud!" << endl;
     }
 }
 
-void Mago::imprimir() const {
-    cout << "Mago - Vida: " << getSalud() << ", Ataque: " << getAtaque() 
-         << ", Nivel: " << getNivel() << ", Mana: " << mana << endl;
-    imprimirVida();
+void Mago::imprimir(std::ostream& os) const {
+    os << "Mago - Vida: " << vida << ", Ataque: " << ataque
+       << ", Nivel: " << nivel << ", Mana: " << mana;
 }

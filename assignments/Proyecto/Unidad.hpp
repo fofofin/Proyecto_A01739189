@@ -6,7 +6,7 @@
 using namespace std;
 
 class Unidad {
-    private:
+    protected:
         int vida;
         int salud;
         int ataque;
@@ -30,7 +30,7 @@ class Unidad {
         void imprimirVida() const;
         virtual void recibeAtaque(int ptosAtaque);
         virtual void atacar(Unidad& objetivo);
-        virtual void imprimir() const;
+        virtual void imprimir(std::ostream& os) const = 0;
         virtual bool estaVivo() const = 0;
         virtual bool puedeRevivir() const { return false; };
         virtual void revivir();
